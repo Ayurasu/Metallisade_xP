@@ -353,7 +353,9 @@
 "Assets/Scripts/DestroyOutOfBounce.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/PlayerController.cs"
+"Assets/Scripts/Scoring.cs"
 "Assets/Scripts/SpawnManager.cs"
+"Assets/Scripts/Test.cs"
 -langversion:9.0
 
 /deterministic
