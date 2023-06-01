@@ -6,28 +6,34 @@ using UnityEngine.UI;
 public class Scoring : MonoBehaviour
 {
 
-    public Text ScoreText;
-    public int score = 0;
-    public int maxScore;
+    // public GameObject ScoreText;
+    public int theScore;
+    public AudioSource collectSound;
+    private GameManager manager;
+   
+
     // Start is called before the first frame update
-    void Start()
-    {
-        score = 0; 
+    void Start() {
+        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
-    public void AddScore(int newScore)
+    void OnTriggerEnter(Collider other)
     {
-        score += newScore;
+        if (!other.gameObject.GetComponent<PlayerController>()) {
+            return;
+        }
 
-    }
-
-    public void UpdateScore()
-    {
-        ScoreText.text = "Score 0" + score;
-    }
-    // Update is called once per frame
-    void Update()
-    {
         
+        if (collectSound)
+        {
+            Debug.Log("pöö");
+            collectSound.Play();
+        }
+        manager.UpdateScore(theScore);
+        Destroy(gameObject);
+
+        
+        //Destroy(gameObject);
     }
 }
+

@@ -29,9 +29,11 @@ public class PlayerController : MonoBehaviour
 
         //Moves the player from side to side
         float horizontalInput = Input.GetAxis("Horizontal");
+        //Debug.Log("kgmklgmklfgmdklg");
         transform.Translate(new Vector3(horizontalInput, 0, 0) * moveSpeed * Time.deltaTime);
 
 
 
     }
+    
 }
