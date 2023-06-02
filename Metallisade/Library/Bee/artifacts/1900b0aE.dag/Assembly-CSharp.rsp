@@ -352,6 +352,7 @@
 "Assets/DetectCollision.cs"
 "Assets/Scripts/DestroyOutOfBounce.cs"
 "Assets/Scripts/GameManager.cs"
+"Assets/Scripts/MainMenu.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/Scoring.cs"
 "Assets/Scripts/SpawnManager.cs"
