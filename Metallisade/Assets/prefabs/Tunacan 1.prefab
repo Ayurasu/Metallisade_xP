@@ -153,5 +153,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdf645b7b7d091e4bb0f56f3f8d20b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theScore: 8
+  theScore: 1
   collectSound: {fileID: 0}

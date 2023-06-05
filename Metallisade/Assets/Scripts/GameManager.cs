@@ -26,25 +26,22 @@ public class GameManager : MonoBehaviour
         //SpawnRandomAsset();
         UpdateScore(0);
         InvokeRepeating("SpawnRandomAsset", startDelay, spawnInterval);
-
+        //isGameActive = true;
+        GameOver();
        
-        isGameActive = true;
+        
     }
 
     
 
     public void UpdateScore(int scoreToAdd) {
         score += scoreToAdd;
-        Debug.Log(score);
-        scoreText.text = "Pisteet " + score;
+        //Debug.Log(score);
+        scoreText.text = "Pisteet " + score; 
+        
+        
 
-        if (gameObject.CompareTag("Banana"))
-        {
-            Debug.Log("game over");
-            GameOver();
-            Destroy(gameObject);
-            return;
-        }
+
     }
 
 
@@ -72,25 +69,31 @@ public class GameManager : MonoBehaviour
         }
     }
     
-    private void OnTriggerEnter(Collider other)
-    {
-
-        Debug.Log("tiidada");
-        
-    }
+  
 
 
 
     public void GameOver()
     {
-        gameOverText.gameObject.SetActive(true);
-        isGameActive = false;
-        restartButton.gameObject.SetActive(true);
+
+
+         if (gameObject.CompareTag("Banana"))
+        {
+            Debug.Log("Banana 1 ");
+            Destroy(gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            return;
+        }
+
+        if (scoreToAdd < -1)
+        {
+            Debug.Log("Banana 2");
+            Destroy(gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            return;
+        }
     }
 
-    public void RestartGame()
-    {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene(true).name);
-    }
+   
     
 }

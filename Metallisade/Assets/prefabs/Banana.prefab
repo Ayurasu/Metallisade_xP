@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2408535737017729383}
   - component: {fileID: 2408535737017729381}
   - component: {fileID: 6572091221877652212}
+  - component: {fileID: -8934533677460641329}
   m_Layer: 0
   m_Name: Banana
   m_TagString: Banana
@@ -140,3 +141,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44f64331a6a4d84439578551375a7ac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8934533677460641329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3291497649903628450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdf645b7b7d091e4bb0f56f3f8d20b4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theScore: -1000
+  collectSound: {fileID: 0}

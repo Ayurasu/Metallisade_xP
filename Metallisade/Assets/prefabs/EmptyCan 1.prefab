@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdf645b7b7d091e4bb0f56f3f8d20b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theScore: 10
+  theScore: 3
   collectSound: {fileID: 0}
 --- !u!1 &7426567242307555957
 GameObject:

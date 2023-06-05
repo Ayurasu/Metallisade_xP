@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Scoring : MonoBehaviour
 {
@@ -23,17 +24,27 @@ public class Scoring : MonoBehaviour
             return;
         }
 
+        //Tried to do game over if points are less than zero
         
-        if (collectSound)
-        {
-            Debug.Log("pöö");
-            collectSound.Play();
-        }
-        manager.UpdateScore(theScore);
-        Destroy(gameObject);
 
-        
-        //Destroy(gameObject);
+
+
+          
+
+            if (collectSound)
+            {
+                Debug.Log("pöö");
+                collectSound.Play();
+            }
+            manager.UpdateScore(theScore);
+            Destroy(gameObject);
+
+
+
+
+
+
+        } 
     }
-}
+
 
