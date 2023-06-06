@@ -24,7 +24,7 @@ public class Scoring : MonoBehaviour
             return;
         }
 
-        //Tried to do game over if points are less than zero
+       
         
 
 
@@ -36,7 +36,8 @@ public class Scoring : MonoBehaviour
                 Debug.Log("pöö");
                 collectSound.Play();
             }
-            manager.UpdateScore(theScore);
+        Debug.Log(theScore);
+        manager.UpdateScore(theScore);
             Destroy(gameObject);
 
 

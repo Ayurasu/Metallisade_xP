@@ -14,9 +14,9 @@ public class GameManager : MonoBehaviour
     private float spawnInterval = 1.5f;
     public int score = 0;
     public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI gameOverText;
     public bool isGameActive;
-    public Button restartButton;
+    public static int Sc0re;
+    
 
     //public AudioSource collectSound;
 
@@ -26,20 +26,27 @@ public class GameManager : MonoBehaviour
         //SpawnRandomAsset();
         UpdateScore(0);
         InvokeRepeating("SpawnRandomAsset", startDelay, spawnInterval);
-        //isGameActive = true;
-        GameOver();
+        isGameActive = true;
+        
        
         
     }
 
     
 
-    public void UpdateScore(int scoreToAdd) {
+    public void UpdateScore(int scoreToAdd) 
+    {
+        if (scoreToAdd < -1)
+        {
+            GameOver();
+            return;
+        }
+
         score += scoreToAdd;
         //Debug.Log(score);
-        scoreText.text = "Pisteet " + score; 
-        
-        
+        scoreText.text = "Pisteet " + score;
+
+       
 
 
     }
@@ -77,21 +84,12 @@ public class GameManager : MonoBehaviour
     {
 
 
-         if (gameObject.CompareTag("Banana"))
-        {
-            Debug.Log("Banana 1 ");
-            Destroy(gameObject);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            return;
-        }
+        Debug.Log("Banana 2");
+        Destroy(gameObject);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        return;
 
-        if (scoreToAdd < -1)
-        {
-            Debug.Log("Banana 2");
-            Destroy(gameObject);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            return;
-        }
+
     }
 
    
