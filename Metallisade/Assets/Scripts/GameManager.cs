@@ -14,8 +14,9 @@ public class GameManager : MonoBehaviour
     private float spawnInterval = 1.5f;
     public int score = 0;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI replayScore;
     public bool isGameActive;
-    public static int Sc0re;
+    private float spawnRate = 1.0f;
     
 
     //public AudioSource collectSound;
@@ -24,16 +25,26 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         //SpawnRandomAsset();
-        UpdateScore(0);
-        InvokeRepeating("SpawnRandomAsset", startDelay, spawnInterval);
-        isGameActive = true;
+       
         
        
         
     }
 
-    
+    public void StartGame(int difficulty)
+    {
+        spawnRate /= difficulty;
+        UpdateScore(0);
+        InvokeRepeating("SpawnRandomAsset", startDelay, spawnInterval);
+        isGameActive = true;
+       
 
+
+
+    }
+
+    
+    //Updates the scoreUI
     public void UpdateScore(int scoreToAdd) 
     {
         if (scoreToAdd < -1)
@@ -47,9 +58,10 @@ public class GameManager : MonoBehaviour
         scoreText.text = "Pisteet " + score;
 
        
-
-
     }
+
+  
+  
 
 
 
@@ -75,10 +87,9 @@ public class GameManager : MonoBehaviour
             Instantiate(flyingPrefabs[assetIndex], spawnPos, flyingPrefabs[assetIndex].transform.rotation);
         }
     }
-    
+
+
   
-
-
 
     public void GameOver()
     {

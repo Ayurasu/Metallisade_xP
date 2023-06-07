@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class Scoring : MonoBehaviour
@@ -10,6 +11,7 @@ public class Scoring : MonoBehaviour
     // public GameObject ScoreText;
     public int theScore;
     public AudioSource collectSound;
+    public TextMeshProUGUI replayScore;
     private GameManager manager;
    
 
@@ -18,20 +20,15 @@ public class Scoring : MonoBehaviour
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
+
+
     void OnTriggerEnter(Collider other)
     {
         if (!other.gameObject.GetComponent<PlayerController>()) {
             return;
         }
 
-       
-        
-
-
-
-          
-
-            if (collectSound)
+        if (collectSound)
             {
                 Debug.Log("pöö");
                 collectSound.Play();
@@ -39,13 +36,11 @@ public class Scoring : MonoBehaviour
         Debug.Log(theScore);
         manager.UpdateScore(theScore);
             Destroy(gameObject);
+        }
+
+   
+}
 
 
-
-
-
-
-        } 
-    }
 
 
