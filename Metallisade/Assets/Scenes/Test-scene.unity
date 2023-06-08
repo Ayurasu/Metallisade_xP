@@ -325,13 +325,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flyingPrefabs:
   - {fileID: 3291497649903628450, guid: cf276617531b2ff44987d20b522e60a3, type: 3}
-  - {fileID: 6442458398927446308, guid: d8acdf7d406e6bb4dbec4e0c853f1421, type: 3}
-  - {fileID: 2326348875412661619, guid: 411e829c427e51c49a45960b1350b38e, type: 3}
+  - {fileID: 3826530139687263824, guid: 8f83f0816947e8443952bcbfca9583ef, type: 3}
+  - {fileID: 6937043783051306936, guid: 5d7745471e7b51645a5fc2a10716d090, type: 3}
   score: 0
   scoreText: {fileID: 574667347}
-  gameOverText: {fileID: 1477139977}
+  replayScore: {fileID: 0}
   isGameActive: 0
-  restartButton: {fileID: 0}
 --- !u!4 &469620598
 Transform:
   m_ObjectHideFlags: 0
