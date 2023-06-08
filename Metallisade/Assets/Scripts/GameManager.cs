@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         //SpawnRandomAsset();
-       
+        StartGame(3);
         
        
         
