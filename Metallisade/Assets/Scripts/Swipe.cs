@@ -43,23 +43,14 @@ public class Swipe : MonoBehaviour
     }
     private void Left()
     {
-        if (transform.position.x > xRange)
-        {
-            transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
-            Debug.Log("To left");
-        }
         Player.transform.position = new Vector3(Player.transform.position.x + 1, Player.transform.position.y, Player.transform.position.z);
+        Debug.Log("To left");
     }
 
     private void Right()
-    {
-        if (transform.position.x < -xRange)
-        {
-            transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
-            Debug.Log("To right");
-        }
+    {    
         Player.transform.position = new Vector3(Player.transform.position.x - 1, Player.transform.position.y, Player.transform.position.z);
-
+        Debug.Log("To right");
     }
 
 }
