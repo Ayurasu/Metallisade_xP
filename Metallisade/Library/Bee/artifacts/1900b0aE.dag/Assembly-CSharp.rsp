@@ -357,7 +357,7 @@
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/Scoring.cs"
 "Assets/Scripts/SpawnManager.cs"
-"Assets/Scripts/Swipe.cs"
+"Assets/Scripts/SwipeRightLeftMove.cs"
 -langversion:9.0
 
 /deterministic
