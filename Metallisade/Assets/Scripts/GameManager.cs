@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI replayScore;
     public bool isGameActive;
     private float spawnRate = 1.0f;
+    public static int difficulty = 1;
     
 
     //public AudioSource collectSound;
@@ -25,22 +26,22 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         //SpawnRandomAsset();
-        StartGame(3);
-        
-       
-        
+        StartGame();
+        DontDestroyOnLoad(this.gameObject);
     }
 
-    public void StartGame(int difficulty)
+    public void StartGame()
     {
-        spawnRate /= difficulty;
+        spawnRate /= GameManager.difficulty;
+        Debug.Log("Starting game diff: " + GameManager.difficulty);
         UpdateScore(0);
-        InvokeRepeating("SpawnRandomAsset", startDelay, spawnInterval);
+        InvokeRepeating("SpawnRandomAsset", startDelay, spawnRate);
         isGameActive = true;
-       
 
+    }
 
-
+    public void setDifficulty(int difficulty) {
+        GameManager.difficulty = difficulty;
     }
 
     
@@ -96,8 +97,8 @@ public class GameManager : MonoBehaviour
 
 
         Debug.Log("Banana 2");
-        Destroy(gameObject);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        isGameActive = false;
         return;
 
 

@@ -30,7 +30,7 @@ public class SwipeRightLeftMove : MonoBehaviour
             touch = Input.GetTouch(0);
             if (touch.phase == TouchPhase.Moved)
             {
-                transform.position = new Vector3(transform.position.x + touch.deltaPosition.x * speed, transform.position.y, transform.position.z);
+                transform.position = new Vector3(transform.position.x + touch.deltaPosition.x * speed/2, transform.position.y, transform.position.z);
             }
         }
     }

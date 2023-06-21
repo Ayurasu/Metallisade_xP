@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DifficultyButton : MonoBehaviour
 {
@@ -14,9 +15,8 @@ public class DifficultyButton : MonoBehaviour
     void Start()
     {
         button = GetComponent<Button>();
-        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         button.onClick.AddListener(SetDifficulty);
-       
 
     }
 
@@ -29,8 +29,8 @@ public class DifficultyButton : MonoBehaviour
     void SetDifficulty()
     {
         Debug.Log(gameObject.name + " was clicked");
-        gameManager.StartGame(difficulty);
-        
+        gameManager.setDifficulty(this.difficulty);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
     }
 }
