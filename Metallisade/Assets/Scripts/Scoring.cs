@@ -24,7 +24,7 @@ public class Scoring : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (!other.gameObject.GetComponent<PlayerController>()) {
+        if (!other.gameObject.GetComponent<SwipeRightLeftMove>()) {
             return;
         }
 

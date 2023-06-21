@@ -15,11 +15,11 @@ public class DestroyOutOfBounce : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      if (transform.position.z > topBound)
+      if (transform.position.y > topBound)
         {
             Destroy(gameObject);
         }
-      else if (transform.position.z < lowerBound)
+      else if (transform.position.y < lowerBound)
         {
             Destroy(gameObject);
         }

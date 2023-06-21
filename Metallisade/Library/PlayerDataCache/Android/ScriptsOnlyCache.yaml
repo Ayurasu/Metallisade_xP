@@ -76,9 +76,6 @@ ScriptsOnlyBuild:
     methodName: Quit
   - assembly: Assembly-CSharp
     fullTypeName: MainMenu
-    methodName: Play
-  - assembly: Assembly-CSharp
-    fullTypeName: MainMenu
     methodName: Replay
   - assembly: Assembly-CSharp
     fullTypeName: MainMenu
@@ -132,9 +129,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6402}
     - Class: 114
-      Script: {instanceID: 7054}
+      Script: {instanceID: 7056}
     - Class: 114
-      Script: {instanceID: 8152}
+      Script: {instanceID: 8154}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -193,7 +190,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6402}
     - Class: 114
-      Script: {instanceID: 25366}
+      Script: {instanceID: 6998}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -268,9 +265,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6402}
     - Class: 114
-      Script: {instanceID: 7054}
+      Script: {instanceID: 7056}
     - Class: 114
-      Script: {instanceID: 23246}
+      Script: {instanceID: 23542}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1098,6 +1095,12 @@ ScriptsOnlyBuild:
     className: UnityOnCollisionExitMessageListener
   - hash:
       serializedVersion: 2
+      Hash: ee98729079998eb63435f99f41b30b9e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: endScript
+  - hash:
+      serializedVersion: 2
       Hash: 18c222bef9ae745ce69ddde9b74337ca
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -1288,15 +1291,9 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: ee98729079998eb63435f99f41b30b9e
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: endScript
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/TheGame.unity
   - Assets/Scenes/Replay.unity
-  playerPath: C:/Users/SK/Desktop/Metallisade.apk
+  playerPath: C:/Users/SK/Desktop/Metallisade_1.1.apk
