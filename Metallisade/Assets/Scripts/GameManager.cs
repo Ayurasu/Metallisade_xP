@@ -96,7 +96,10 @@ public class GameManager : MonoBehaviour
     {
 
 
-        Debug.Log("Banana 2");
+        Debug.Log("GameOver");
+        Debug.Log(IsInvoking("SpawnRandomAsset"));
+        CancelInvoke();
+        Debug.Log(IsInvoking("SpawnRandomAsset"));
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         isGameActive = false;
         return;
