@@ -267,7 +267,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 7056}
     - Class: 114
-      Script: {instanceID: 23542}
+      Script: {instanceID: 23788}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1296,4 +1296,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/TheGame.unity
   - Assets/Scenes/Replay.unity
-  playerPath: C:/Users/SK/Desktop/Metallisade_1.1.apk
+  playerPath: C:/Users/SK/Desktop/Metallisade_1.2.apk

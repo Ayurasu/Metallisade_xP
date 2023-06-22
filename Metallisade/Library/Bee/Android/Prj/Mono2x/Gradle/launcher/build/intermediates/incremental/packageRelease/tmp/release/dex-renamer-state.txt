@@ -1,4 +1,4 @@
-#Wed Jun 21 11:32:18 EEST 2023
+#Thu Jun 22 13:38:11 EEST 2023
 base.0=C\:\\Users\\SK\\Desktop\\Gitti\\Metallisade_xP\\Metallisade_xP\\Metallisade\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
