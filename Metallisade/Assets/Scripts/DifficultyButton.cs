@@ -31,6 +31,5 @@ public class DifficultyButton : MonoBehaviour
         Debug.Log(gameObject.name + " was clicked");
         gameManager.setDifficulty(this.difficulty);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
     }
 }

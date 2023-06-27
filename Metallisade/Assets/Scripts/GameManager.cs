@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,10 +12,8 @@ public class GameManager : MonoBehaviour
     private float spawnRangeX = 1.5f;
     private float spawnPosZ = -1;
     private float startDelay = 2;
-    private float spawnInterval = 1.5f;
     public int score = 0;
     public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI replayScore;
     public bool isGameActive;
     private float spawnRate = 1.0f;
     public static int difficulty = 1;
@@ -25,23 +24,33 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //SpawnRandomAsset();
-        StartGame();
+        SceneManager.sceneLoaded += OnSceneLoad;
         DontDestroyOnLoad(this.gameObject);
     }
 
     public void StartGame()
     {
-        spawnRate /= GameManager.difficulty;
+        spawnRate = 1.0f / GameManager.difficulty;
         Debug.Log("Starting game diff: " + GameManager.difficulty);
+        score = 0;
         UpdateScore(0);
         InvokeRepeating("SpawnRandomAsset", startDelay, spawnRate);
         isGameActive = true;
 
     }
 
+    void OnSceneLoad(Scene scene, LoadSceneMode mode) {
+        if (scene.name == "TheGame") {
+            StartGame();
+        }
+    }
+
     public void setDifficulty(int difficulty) {
         GameManager.difficulty = difficulty;
+    }
+
+    void OnDisable() {
+        SceneManager.sceneLoaded -= OnSceneLoad;
     }
 
     
@@ -55,9 +64,19 @@ public class GameManager : MonoBehaviour
         }
 
         score += scoreToAdd;
-        //Debug.Log(score);
-        scoreText.text = "Pisteet " + score;
-
+        if (!scoreText) {
+            Debug.Log("Ei score textiÃ¤");
+            try {
+                scoreText = GameObject.Find("ScoreText").GetComponent<TextMeshProUGUI>();
+            } catch(NullReferenceException e) {
+                Debug.Log("Could not find score text component");
+            }
+            
+        }
+        if (scoreText) {
+            scoreText.text = "Pisteet " + score;
+        }
+        
        
     }
 
@@ -78,11 +97,11 @@ public class GameManager : MonoBehaviour
         
         if (isGameActive)
         {
-            int assetIndex = Random.Range(0, flyingPrefabs.Length);
+            int assetIndex = UnityEngine.Random.Range(0, flyingPrefabs.Length);
             //Randomize the location
-            Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 4, spawnPosZ);
+            Vector3 spawnPos = new Vector3(UnityEngine.Random.Range(-spawnRangeX, spawnRangeX), 4, spawnPosZ);
 
-            //Debug.Log("Toimiik tää?");
+            //Debug.Log("Toimiik tï¿½ï¿½?");
             //Spawns the assets
 
             Instantiate(flyingPrefabs[assetIndex], spawnPos, flyingPrefabs[assetIndex].transform.rotation);
